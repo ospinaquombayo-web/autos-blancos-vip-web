@@ -1,6 +1,6 @@
 import { FaWhatsapp } from "react-icons/fa";
 
-function WhatsappButton() {
+function WhatsAppButton() {
   return (
     <a
       href="https://wa.me/573212334935"
@@ -12,4 +12,4 @@ function WhatsappButton() {
   );
 }
 
-export default WhatsappButton;
+export default WhatsAppButton;
