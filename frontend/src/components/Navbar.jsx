@@ -39,14 +39,13 @@ function Navbar() {
 
         {/* BOTON MOBILE */}
         <button
-          className="md:hidden text-2xl"
+          className="md:hidden text-2xl text-white hover:text-yellow-400 transition"
           onClick={() => setMenuOpen(!menuOpen)}
         >
-          {menuOpen ? <FaTimes /> : <FaBars />}
+          {menuOpen ? <FaTimes className="text-yellow-400" /> : <FaBars />}
         </button>
       </div>
 
-      {/* MENU MOBILE */}
       {/* MENU MOBILE */}
       {menuOpen && (
         <div className="fixed top-[73px] left-0 w-full h-[calc(100vh-73px)] bg-black/95 z-50 animate-fade-in">
