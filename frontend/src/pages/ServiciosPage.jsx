@@ -1,7 +1,7 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Servicios from "../components/Servicios";
-import BotonWhatsApp from "../components/BotonWhatsApp";
+import WhatsAppButton from "../components/WhatsAppButton";
 
 function ServiciosPage() {
   return (
@@ -30,7 +30,7 @@ function ServiciosPage() {
 
       {/* PIE DE PÁGINA Y CONTACTO */}
       <Footer />
-      <BotonWhatsApp />
+      <WhatsAppButton />
     </div>
   );
 }
