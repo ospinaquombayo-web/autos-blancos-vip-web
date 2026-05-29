@@ -47,14 +47,17 @@ function Navbar() {
       </div>
 
       {/* MENU MOBILE */}
+      {/* MENU MOBILE */}
       {menuOpen && (
-        <div className="md:hidden bg-black border-t border-gray-800">
-          <ul className="flex flex-col items-center gap-8 py-10 text-xl">
+        <div className="fixed top-[73px] left-0 w-full h-[calc(100vh-73px)] bg-black/95 z-50 animate-fade-in">
+          {/* 👆 CAMBIO: Ahora es 'fixed', flota sobre la página y ocupa el alto restante del celular */}
+          <ul className="flex flex-col items-center justify-center h-full gap-10 text-xl text-white font-medium">
+            {/* 👆 CAMBIO: Agregamos 'text-white' para que las letras sean 100% blancas y legibles */}
             <li>
               <a
                 href="#inicio"
                 onClick={() => setMenuOpen(false)}
-                className="hover:text-yellow-400"
+                className="hover:text-yellow-400 text-white transition block py-2"
               >
                 Inicio
               </a>
@@ -64,7 +67,7 @@ function Navbar() {
               <a
                 href="#servicios"
                 onClick={() => setMenuOpen(false)}
-                className="hover:text-yellow-400"
+                className="hover:text-yellow-400 text-white transition block py-2"
               >
                 Servicios
               </a>
@@ -74,7 +77,7 @@ function Navbar() {
               <a
                 href="#flota"
                 onClick={() => setMenuOpen(false)}
-                className="hover:text-yellow-400"
+                className="hover:text-yellow-400 text-white transition block py-2"
               >
                 Nosotros
               </a>
@@ -84,7 +87,7 @@ function Navbar() {
               <a
                 href="#contacto"
                 onClick={() => setMenuOpen(false)}
-                className="hover:text-yellow-400"
+                className="hover:text-yellow-400 text-white transition block py-2"
               >
                 Contacto
               </a>
