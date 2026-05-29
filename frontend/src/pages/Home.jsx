@@ -1,3 +1,4 @@
+import Formulario from "../components/Formulario";
 import WhatsAppButton from "../components/WhatsAppButton";
 import Hero from "../components/Hero";
 import Servicios from "../components/Servicios";
@@ -11,6 +12,7 @@ function Home() {
       <Hero />
       <Servicios />
       <Flota />
+      <Formulario />
       <Contacto />
       <Footer />
       <WhatsAppButton />
