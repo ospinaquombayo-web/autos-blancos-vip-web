@@ -12,7 +12,6 @@ function Home() {
     <>
       <Navbar />
       <Hero />
-      <Servicios />
       <Flota />
       <Formulario />
       <Contacto />
