@@ -11,7 +11,7 @@ function Servicios() {
       </h3>
 
       <motion.div
-        className="grid md:grid-cols-3 gap-10"
+        className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10"
         initial={{ opacity: 0, y: 80 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
