@@ -3,7 +3,7 @@ import Hero from "../components/Hero";
 import Estadisticas from "../components/Estadisticas";
 import Nosotros from "../components/Nosotros";
 import Footer from "../components/Footer";
-import WhatsAppButton from "../components/BotonWhatsApp";
+import WhatsAppButton from "../components/WhatsAppButton";
 
 function Home() {
   return (
