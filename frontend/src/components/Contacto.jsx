@@ -10,7 +10,12 @@ function Contacto() {
           transition={{ duration: 1 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-5xl font-bold text-center mb-20">Contáctanos</h3>
+          <div className="text-center mb-16 md:mb-20">
+            <h3 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight uppercase">
+              Contáctanos
+            </h3>
+            <div className="w-16 h-1 bg-yellow-500 mx-auto mt-4 rounded-full shadow-lg shadow-yellow-500/50"></div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
             {/* INFORMACION */}

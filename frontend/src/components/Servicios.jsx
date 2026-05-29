@@ -6,9 +6,12 @@ import turistico from "../assets/turistico.jpg";
 function Servicios() {
   return (
     <section id="servicios" className="px-8 py-24 bg-black">
-      <h3 className="text-5xl font-bold text-center mb-20">
-        Nuestros Servicios
-      </h3>
+      <div className="text-center mb-16 md:mb-20">
+        <h3 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight uppercase">
+          Nuestros Servicios
+        </h3>
+        <div className="w-16 h-1 bg-yellow-500 mx-auto mt-4 rounded-full shadow-lg shadow-yellow-500/50"></div>
+      </div>
 
       <motion.div
         className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10"

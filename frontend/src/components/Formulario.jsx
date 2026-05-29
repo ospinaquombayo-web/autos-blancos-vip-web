@@ -55,9 +55,12 @@ function Formulario() {
   return (
     <section id="cotizacion" className="px-4 sm:px-8 py-20 bg-gray-950">
       <div className="max-w-4xl mx-auto">
-        <h3 className="text-4xl md:text-5xl font-bold text-center mb-12 text-white">
-          Solicitar Cotización
-        </h3>
+        <div className="text-center mb-12 md:mb-16">
+          <h3 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight uppercase">
+            Solicitar Cotización
+          </h3>
+          <div className="w-16 h-1 bg-yellow-500 mx-auto mt-4 rounded-full shadow-lg shadow-yellow-500/50"></div>
+        </div>
 
         <form
           onSubmit={handleSubmit}
