@@ -14,33 +14,43 @@ function Hero() {
       />
 
       {/* CAPA OSCURA */}
-      <div className="absolute inset-0 bg-black/70"></div>
+      <div className="absolute inset-0 bg-black/75"></div>
 
       {/* CONTENIDO */}
-      <div className="relative z-10 px-6">
-        <h2 className="text-5xl md:text-7xl font-bold max-w-5xl leading-tight">
-          Transporte Empresarial, Escolar y Turístico
+      <div className="relative z-10 px-6 max-w-5xl mx-auto flex flex-col items-center">
+        {/* TÍTULO PRINCIPAL ADAPTATIVO */}
+        <h2 className="text-4xl sm:text-6xl md:text-7xl font-extrabold text-white leading-tight tracking-tight uppercase">
+          El Estándar <span className="text-yellow-400">Premium</span>{" "}
+          <br className="hidden sm:inline" />
+          en Transporte Privado
         </h2>
 
-        <p className="text-gray-300 text-xl mt-8 max-w-3xl mx-auto">
-          Seguridad, comodidad y puntualidad en cada recorrido. Servicio
-          profesional para empresas, instituciones educativas y turismo.
+        {/* SUBTÍTULO PERSUASIVO ADAPTATIVO */}
+        <p className="text-gray-300 text-base sm:text-lg md:text-xl mt-6 max-w-3xl leading-relaxed font-light">
+          En{" "}
+          <span className="text-white font-semibold">
+            AUTOS BLANCOS VIP WHITE S.A.S
+          </span>{" "}
+          movemos a tus colaboradores, estudiantes y turistas con la máxima
+          puntualidad, confort y seguridad. Flota ejecutiva de última generación
+          y conductores certificados a tu servicio.
         </p>
 
-        <div className="flex flex-col md:flex-row gap-6 mt-10 justify-center">
+        {/* BOTONES INTERACTIVOS RESPONSIVOS */}
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-10 w-full sm:w-auto">
           <a
-            href="#contacto"
-            className="bg-yellow-500 hover:bg-yellow-400 text-black font-bold px-10 py-4 rounded-2xl text-lg transition"
+            href="#cotizacion"
+            className="bg-yellow-500 hover:bg-yellow-400 text-black font-bold px-8 sm:px-10 py-4 rounded-2xl text-base sm:text-lg transition transform hover:scale-105 active:scale-95 shadow-lg shadow-yellow-500/20 text-center"
           >
             Solicitar Cotización
           </a>
 
           <a
-            href="https://wa.me/573000000000"
+            href="https://wa.me"
             target="_blank"
-            className="border border-white hover:bg-white hover:text-black px-10 py-4 rounded-2xl text-lg transition"
+            className="border border-white/80 text-white hover:bg-white hover:text-black px-8 sm:px-10 py-4 rounded-2xl text-base sm:text-lg transition transform hover:scale-105 active:scale-95 text-center font-medium"
           >
-            Contactar
+            Contactar Aliado VIP
           </a>
         </div>
       </div>

@@ -19,9 +19,10 @@ function Contacto() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
             {/* INFORMACION */}
-            <div>
-              <h4 className="text-3xl font-bold mb-10">
-                AUTOS BLANCOS VIP WHITE S.A.S
+            <div className="text-center md:text-left">
+              <h4 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white tracking-wide uppercase mb-6">
+                AUTOS BLANCOS <span className="text-yellow-400">VIP WHITE</span>{" "}
+                S.A.S
               </h4>
 
               <div className="space-y-6 text-xl text-gray-300">
