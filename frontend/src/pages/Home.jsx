@@ -1,20 +1,17 @@
 import Navbar from "../components/Navbar";
-import Formulario from "../components/Formulario";
-import WhatsAppButton from "../components/WhatsAppButton";
 import Hero from "../components/Hero";
-import Servicios from "../components/Servicios";
-import Flota from "../components/Flota";
-import Contacto from "../components/Contacto";
+import Estadisticas from "../components/Estadisticas";
+import Nosotros from "../components/Nosotros";
 import Footer from "../components/Footer";
+import WhatsAppButton from "../components/BotonWhatsApp";
 
 function Home() {
   return (
     <>
       <Navbar />
       <Hero />
-      <Flota />
-      <Formulario />
-      <Contacto />
+      <Estadisticas />
+      <Nosotros />
       <Footer />
       <WhatsAppButton />
     </>
