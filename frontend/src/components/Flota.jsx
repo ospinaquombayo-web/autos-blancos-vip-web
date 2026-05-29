@@ -18,7 +18,7 @@ function Flota() {
             Nuestra Flota
           </h3>
 
-          <div className="grid md:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
             {/* VAN */}
             <div className="bg-black rounded-3xl overflow-hidden border border-gray-800 hover:border-yellow-400 transition duration-300 hover:scale-105">
               <img

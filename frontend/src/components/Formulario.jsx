@@ -33,7 +33,6 @@ function Formulario() {
       });
 
       const data = await response.text();
-
       alert(data);
 
       setFormData({
@@ -54,40 +53,43 @@ function Formulario() {
   };
 
   return (
-    <section className="px-8 py-24 bg-gray-950">
+    <section id="cotizacion" className="px-4 sm:px-8 py-20 bg-gray-950">
       <div className="max-w-4xl mx-auto">
-        <h3 className="text-4xl font-bold text-center mb-16">
+        <h3 className="text-4xl md:text-5xl font-bold text-center mb-12 text-white">
           Solicitar Cotización
         </h3>
 
-        <form onSubmit={handleSubmit} className="grid md:grid-cols-2 gap-6">
+        <form
+          onSubmit={handleSubmit}
+          className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6"
+        >
           <input
             type="text"
             name="nombre"
-            placeholder="Nombre"
+            placeholder="Nombre completo"
             value={formData.nombre}
             onChange={handleChange}
-            className="bg-gray-900 p-4 rounded-xl"
+            className="bg-gray-900 p-4 rounded-xl text-white outline-none border border-gray-800 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition"
             required
           />
 
           <input
             type="text"
             name="telefono"
-            placeholder="Teléfono"
+            placeholder="Teléfono de contacto"
             value={formData.telefono}
             onChange={handleChange}
-            className="bg-gray-900 p-4 rounded-xl"
+            className="bg-gray-900 p-4 rounded-xl text-white outline-none border border-gray-800 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition"
             required
           />
 
           <input
             type="email"
             name="correo"
-            placeholder="Correo"
+            placeholder="Correo electrónico"
             value={formData.correo}
             onChange={handleChange}
-            className="bg-gray-900 p-4 rounded-xl"
+            className="bg-gray-900 p-4 rounded-xl text-white outline-none border border-gray-800 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition"
             required
           />
 
@@ -95,10 +97,12 @@ function Formulario() {
             name="servicio"
             value={formData.servicio}
             onChange={handleChange}
-            className="bg-gray-900 p-4 rounded-xl"
+            className="bg-gray-900 p-4 rounded-xl text-white outline-none border border-gray-800 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition appearance-none"
             required
           >
-            <option value="">Seleccione servicio</option>
+            <option value="" className="text-gray-500">
+              Seleccione el tipo de servicio
+            </option>
             <option>Empresarial</option>
             <option>Escolar</option>
             <option>Turístico</option>
@@ -107,28 +111,33 @@ function Formulario() {
           <input
             type="text"
             name="origen"
-            placeholder="Origen"
+            placeholder="Lugar de origen (Ciudad / Dirección)"
             value={formData.origen}
             onChange={handleChange}
-            className="bg-gray-900 p-4 rounded-xl"
+            className="bg-gray-900 p-4 rounded-xl text-white outline-none border border-gray-800 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition"
           />
 
           <input
             type="text"
             name="destino"
-            placeholder="Destino"
+            placeholder="Lugar de destino (Ciudad / Dirección)"
             value={formData.destino}
             onChange={handleChange}
-            className="bg-gray-900 p-4 rounded-xl"
+            className="bg-gray-900 p-4 rounded-xl text-white outline-none border border-gray-800 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition"
           />
 
-          <input
-            type="date"
-            name="fecha_servicio"
-            value={formData.fecha_servicio}
-            onChange={handleChange}
-            className="bg-gray-900 p-4 rounded-xl"
-          />
+          <div className="relative flex flex-col">
+            <span className="text-xs text-gray-500 absolute top-1 left-4">
+              Fecha del servicio
+            </span>
+            <input
+              type="date"
+              name="fecha_servicio"
+              value={formData.fecha_servicio}
+              onChange={handleChange}
+              className="bg-gray-900 pt-6 pb-2 px-4 rounded-xl text-white outline-none border border-gray-800 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition h-full"
+            />
+          </div>
 
           <input
             type="number"
@@ -136,21 +145,21 @@ function Formulario() {
             placeholder="Número de pasajeros"
             value={formData.pasajeros}
             onChange={handleChange}
-            className="bg-gray-900 p-4 rounded-xl"
+            className="bg-gray-900 p-4 rounded-xl text-white outline-none border border-gray-800 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition"
           />
 
           <textarea
             name="mensaje"
-            placeholder="Mensaje adicional"
+            placeholder="Detalles o especificaciones adicionales (opcional)..."
             value={formData.mensaje}
             onChange={handleChange}
-            className="bg-gray-900 p-4 rounded-xl md:col-span-2"
-            rows="5"
+            className="bg-gray-900 p-4 rounded-xl text-white outline-none border border-gray-800 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition grid-cols-1 md:col-span-2"
+            rows="4"
           ></textarea>
 
           <button
             type="submit"
-            className="bg-yellow-500 hover:bg-yellow-400 text-black font-bold py-4 rounded-xl md:col-span-2"
+            className="bg-yellow-500 hover:bg-yellow-400 text-black font-bold py-4 rounded-xl grid-cols-1 md:col-span-2 transition duration-300 hover:scale-[1.01] active:scale-[0.99]"
           >
             Enviar Cotización
           </button>
