@@ -63,7 +63,7 @@ function Admin() {
 
   const eliminarCotizacion = (id) => {
     axios
-      .delete(`http://localhost:3000/cotizaciones/${id}`)
+      .delete(`https://autos-blancos-vip-web.onrender.com/cotizaciones${id}`)
       .then(() => {
         setCotizaciones(cotizaciones.filter((item) => item.id !== id));
       })

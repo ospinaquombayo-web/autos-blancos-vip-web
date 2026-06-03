@@ -1,5 +1,5 @@
 import hero from "../assets/hero.jpg";
-
+import { Link } from "react-router-dom";
 function Hero() {
   return (
     <section
@@ -38,15 +38,14 @@ function Hero() {
 
         {/* BOTONES INTERACTIVOS RESPONSIVOS */}
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-10 w-full sm:w-auto">
-          <a
-            href="#cotizacion"
+          <Link
+            to="/cotizar"
             className="bg-yellow-500 hover:bg-yellow-400 text-black font-bold px-8 sm:px-10 py-4 rounded-2xl text-base sm:text-lg transition transform hover:scale-105 active:scale-95 shadow-lg shadow-yellow-500/20 text-center"
           >
             Solicitar Cotización
-          </a>
-
+          </Link>
           <a
-            href="https://wa.me/3212334935"
+            href="https://wa.me/573212334935?text=Hola,%20estoy%20interesado%20en%20conocer%20más%20acerca%20de%20los%20servicios%20de%20transporte%20que%20ofrece%20VIP%20WHITE.%20Agradezco%20su%20información."
             target="_blank"
             className="border border-white/80 text-white hover:bg-white hover:text-black px-8 sm:px-10 py-4 rounded-2xl text-base sm:text-lg transition transform hover:scale-105 active:scale-95 text-center font-medium"
           >

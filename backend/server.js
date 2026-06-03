@@ -31,7 +31,7 @@ const db = mysql.createConnection({
   host: "mysql-2cadf4fa-autosblancosvip.h.aivencloud.com",
   port: 18890,
   user: "avnadmin",
-  password: process.env.AIVEN_PASSWORD, // 🔥 Ahora lee la contraseña de forma segura desde el .env
+  password: process.env.AIVEN_PASSWORD, // 
   database: "defaultdb",
   ssl: {
     rejectUnauthorized: false,
