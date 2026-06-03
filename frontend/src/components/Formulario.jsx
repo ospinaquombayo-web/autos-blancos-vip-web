@@ -24,15 +24,17 @@ function Formulario() {
     e.preventDefault();
 
     try {
-            // 🚀 Ahora apuntamos directamente a tu servidor en vivo en internet
-      const response = await fetch("https://onrender.com", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      // 🚀 Ahora apuntamos directamente a tu servidor en vivo en internet
+      const response = await fetch(
+        " https://autos-blancos-vip-web.onrender.com",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
         },
-        body: JSON.stringify(formData),
-      });
-
+      );
 
       const data = await response.text();
       alert(data);
