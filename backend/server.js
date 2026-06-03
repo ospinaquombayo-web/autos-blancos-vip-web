@@ -115,6 +115,7 @@ app.post("/cotizacion", (req, res) => {
           success: true,
           message: "Cotización enviada correctamente",
         });
+        
         const mailOptions = {
           from: "josedan538@gmail.com",
           to: "cp8475050@gmail.com",
