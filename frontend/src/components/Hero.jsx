@@ -2,13 +2,12 @@ import hero from "../assets/hero.jpg";
 import { Link } from "react-router-dom";
 
 function Hero() {
-  // Declaramos tus datos exactos de forma limpia
   const numeroWhatsApp = "573212334935";
   const mensajePredefinido =
     "Hola, estoy interesado en conocer más acerca de los servicios de transporte que ofrece VIP WHITE. Agradezco su información.";
 
-  // JavaScript se encarga de convertir los espacios, comas y tildes al formato web perfecto
-  const enlaceCompleto = `https://wa.me{numeroWhatsApp}?text=${encodeURIComponent(mensajePredefinido)}`;
+  // SOLUCIÓN: Usamos api.whatsapp.com en lugar de wa.me
+  const enlaceCompleto = `https://whatsapp.com{numeroWhatsApp}&text=${encodeURIComponent(mensajePredefinido)}`;
 
   return (
     <section
@@ -52,7 +51,6 @@ function Hero() {
             Solicitar Cotización
           </Link>
 
-          {/* Aquí usamos la variable optimizada */}
           <a
             href={enlaceCompleto}
             target="_blank"
