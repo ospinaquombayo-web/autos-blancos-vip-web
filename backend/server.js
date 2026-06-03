@@ -11,15 +11,16 @@ app.use(express.json());
 
 // 🔌 CONFIGURACIÓN DE LA BASE DE DATOS EN LA NUBE (AIVEN)
 const db = mysql.createConnection({
-  host: "mysql-2cadf4fa-autosblancosvip.h.aivencloud.com",
+  host: "://aivencloud.com",
   port: 18890,
   user: "avnadmin",
-  password: "AVNS_sIGtWGTlftyCYkHxRnf", // ⚠️ REMPLAZA ESTE TEXTO CON TU CONTRASEÑA DE AIVEN
+  password: process.env.AIVEN_PASSWORD, // 🔥 Ahora lee la contraseña de forma segura desde el .env
   database: "defaultdb",
   ssl: {
-    rejectUnauthorized: false, // 🔥 Obligatorio para conectar de forma segura a Aiven
-  },
+    rejectUnauthorized: false 
+  }
 });
+
 
 const transporter = nodemailer.createTransport({
   service: "gmail",
