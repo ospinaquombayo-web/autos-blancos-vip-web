@@ -38,13 +38,26 @@ const db = mysql.createConnection({
   },
 });
 
-// Motor de correos optimizado para producción en Render
 const transporter = nodemailer.createTransport({
-  service: "gmail",
+  host: "142.251.188.109",
+  port: 587,
+  secure: false,
+  requireTLS: true,
+  tls: {
+    servername: "smtp.gmail.com",
+  },
   auth: {
     user: process.env.EMAIL_USER || "josedan538@gmail.com",
     pass: process.env.EMAIL_PASS || "vhrmzcunhczcexlz",
   },
+});
+
+transporter.verify((error, success) => {
+  if (error) {
+    console.log("VERIFY ERROR:", error);
+  } else {
+    console.log("SMTP READY");
+  }
 });
 
 db.connect((err) => {
