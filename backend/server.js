@@ -29,8 +29,11 @@ const db = mysql.createConnection({
   },
 });
 
+// Motor de correos optimizado para producción en Render
 const transporter = nodemailer.createTransport({
-  service: "gmail",
+  host: "://gmail.com",
+  port: 465,
+  secure: true, // Usa SSL obligatorio para servidores en la nube
   auth: {
     user: process.env.EMAIL_USER || "josedan538@gmail.com",
     pass: process.env.EMAIL_PASS || "vhrmzcunhczcexlz",
