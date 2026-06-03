@@ -33,7 +33,9 @@ const db = mysql.createConnection({
 const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
   port: 465,
-  secure: true, // Usa SSL obligatorio para servidores en la nube
+  secure: false,
+  requireTLS: true,
+  family: 4, // Fuerza IPv4
   auth: {
     user: process.env.EMAIL_USER || "josedan538@gmail.com",
     pass: process.env.EMAIL_PASS || "vhrmzcunhczcexlz",
