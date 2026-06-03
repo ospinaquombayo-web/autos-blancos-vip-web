@@ -31,11 +31,7 @@ const db = mysql.createConnection({
 
 // Motor de correos optimizado para producción en Render
 const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 465,
-  secure: false,
-  requireTLS: true,
-  family: 4, // Fuerza IPv4
+  service: "gmail",
   auth: {
     user: process.env.EMAIL_USER || "josedan538@gmail.com",
     pass: process.env.EMAIL_PASS || "vhrmzcunhczcexlz",
