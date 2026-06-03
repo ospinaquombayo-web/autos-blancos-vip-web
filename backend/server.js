@@ -9,11 +9,16 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// 🔌 CONFIGURACIÓN DE LA BASE DE DATOS EN LA NUBE (AIVEN)
 const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "admin",
-  database: "Autos_Blancos_VIP",
+  host: "mysql-2cadf4fa-autosblancosvip.h.aivencloud.com",
+  port: 18890,
+  user: "avnadmin",
+  password: "AVNS_sIGtWGTlftyCYkHxRnf", // ⚠️ REMPLAZA ESTE TEXTO CON TU CONTRASEÑA DE AIVEN
+  database: "defaultdb",
+  ssl: {
+    rejectUnauthorized: false, // 🔥 Obligatorio para conectar de forma segura a Aiven
+  },
 });
 
 const transporter = nodemailer.createTransport({
@@ -26,9 +31,9 @@ const transporter = nodemailer.createTransport({
 
 db.connect((err) => {
   if (err) {
-    console.log("Error de conexión:", err);
+    console.log("❌ Error de conexión a la nube:", err);
   } else {
-    console.log("MySQL conectado");
+    console.log("🚀 MySQL en la nube (Aiven) conectado correctamente");
   }
 });
 
@@ -50,8 +55,8 @@ app.post("/cotizacion", (req, res) => {
   } = req.body;
 
   const sql = `
-    INSERT INTO cotizaciones
-    (nombre, telefono, correo, servicio, origen, destino, fecha_servicio, pasajeros, mensaje)
+    INSERT INTO cotizaciones 
+    (nombre, telefono, correo, servicio, origen, destino, fecha_servicio, pasajeros, mensaje) 
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
   `;
 
@@ -79,7 +84,6 @@ app.post("/cotizacion", (req, res) => {
           subject: "Nueva Cotización - VIP WHITE",
           html: `
     <h2>Nueva solicitud de cotización</h2>
-
     <p><strong>Nombre:</strong> ${nombre}</p>
     <p><strong>Teléfono:</strong> ${telefono}</p>
     <p><strong>Correo:</strong> ${correo}</p>
@@ -105,6 +109,7 @@ app.post("/cotizacion", (req, res) => {
     },
   );
 });
+
 app.get("/cotizaciones", (req, res) => {
   const sql = "SELECT * FROM cotizaciones ORDER BY id DESC";
 

@@ -24,6 +24,7 @@ function Formulario() {
     e.preventDefault();
 
     try {
+      // 🚀 Conectado temporalmente al backend local que apunta a la nube
       const response = await fetch("http://localhost:3000/cotizacion", {
         method: "POST",
         headers: {
@@ -103,12 +104,12 @@ function Formulario() {
             className="bg-gray-900 p-4 rounded-xl text-white outline-none border border-gray-800 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition appearance-none"
             required
           >
-            <option value="" className="text-gray-500">
+            <option value="" disabled className="text-gray-500">
               Seleccione el tipo de servicio
             </option>
-            <option>Empresarial</option>
-            <option>Escolar</option>
-            <option>Turístico</option>
+            <option value="Empresarial">Empresarial</option>
+            <option value="Escolar">Escolar</option>
+            <option value="Turístico">Turístico</option>
           </select>
 
           <input
