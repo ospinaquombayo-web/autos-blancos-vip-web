@@ -3,6 +3,15 @@ const cors = require("cors");
 const mysql = require("mysql2");
 require("dotenv").config();
 const nodemailer = require("nodemailer");
+const dns = require("dns");
+
+// Forzar IPv4 primero
+dns.setDefaultResultOrder("ipv4first");
+
+// Ver qué IPs devuelve Gmail
+dns.lookup("smtp.gmail.com", { all: true }, (err, addresses) => {
+  console.log("SMTP:", addresses);
+});
 
 const app = express();
 
