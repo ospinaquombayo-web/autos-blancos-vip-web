@@ -32,8 +32,8 @@ const db = mysql.createConnection({
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: "josedan538@gmail.com",
-    pass: "vhrmzcunhczcexlz",
+    user: process.env.EMAIL_USER || "josedan538@gmail.com",
+    pass: process.env.EMAIL_PASS || "vhrmzcunhczcexlz",
   },
 });
 
