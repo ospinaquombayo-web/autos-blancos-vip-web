@@ -31,7 +31,7 @@ const db = mysql.createConnection({
 
 // Motor de correos optimizado para producción en Render
 const transporter = nodemailer.createTransport({
-  host: "173.194.76.108",
+  host: "smtp.gmail.com",
   port: 465,
   secure: true, // Usa SSL obligatorio para servidores en la nube
   auth: {
