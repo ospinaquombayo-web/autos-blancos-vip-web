@@ -109,6 +109,12 @@ app.post("/cotizacion", (req, res) => {
         console.log(err);
         res.status(500).send("Error al guardar");
       } else {
+        console.log("✅ Cotización guardada correctamente en MySQL");
+
+        res.status(200).json({
+          success: true,
+          message: "Cotización enviada correctamente",
+        });
         const mailOptions = {
           from: "josedan538@gmail.com",
           to: "cp8475050@gmail.com",
