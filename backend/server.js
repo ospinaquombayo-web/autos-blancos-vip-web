@@ -109,13 +109,12 @@ app.post("/cotizacion", (req, res) => {
 
         transporter.sendMail(mailOptions, (error, info) => {
           if (error) {
-            console.log(error);
+            // 🔥 Esto nos mostrará el error real en la consola de Render
+            console.log("❌ ERROR ENVIANDO CORREO:", error);
           } else {
-            console.log("Correo enviado:", info.response);
+            console.log("✅ Correo enviado con éxito:", info.response);
           }
         });
-
-        res.send("Cotización enviada correctamente");
       }
     },
   );
