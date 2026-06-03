@@ -26,7 +26,7 @@ function Formulario() {
     try {
       // 🚀 Ahora apuntamos directamente a tu servidor en vivo en internet
       const response = await fetch(
-        " https://autos-blancos-vip-web.onrender.com",
+        " https://autos-blancos-vip-web.onrender.com/cotizacion",
         {
           method: "POST",
           headers: {
