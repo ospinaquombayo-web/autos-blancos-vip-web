@@ -6,7 +6,15 @@ const nodemailer = require("nodemailer");
 
 const app = express();
 
-app.use(cors());
+// CONFIGURACIÓN DE CORS PERMISIVO PARA NETLIFY Y LOCALHOST
+app.use(
+  cors({
+    origin: "*", // Permite que cualquier origen (tanto tu localhost como tu web publicada) envíe datos
+    methods: ["GET", "POST", "DELETE"],
+    allowedHeaders: ["Content-Type"],
+  }),
+);
+
 app.use(express.json());
 
 // 🔌 CONFIGURACIÓN DE LA BASE DE DATOS EN LA NUBE (AIVEN)
