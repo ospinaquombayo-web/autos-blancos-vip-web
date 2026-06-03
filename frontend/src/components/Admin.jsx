@@ -38,14 +38,27 @@ function Admin() {
   ];
 
   useEffect(() => {
-    axios
-      .get("http://localhost:3000/cotizaciones")
-      .then((res) => {
-        setCotizaciones(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    const obtenerCotizaciones = () => {
+      axios
+        .get("https://autos-blancos-vip-web.onrender.com/cotizaciones")
+        .then((res) => {
+          setCotizaciones(res.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    };
+
+    // Carga inicial
+    obtenerCotizaciones();
+
+    // Actualización automática cada 5 segundos
+    const intervalo = setInterval(() => {
+      obtenerCotizaciones();
+    }, 2000);
+
+    // Limpiar intervalo al salir de la página
+    return () => clearInterval(intervalo);
   }, []);
 
   const eliminarCotizacion = (id) => {
