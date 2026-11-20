@@ -8,7 +8,7 @@ const dns = require("dns");
 // Forzar IPv4 primero
 dns.setDefaultResultOrder("ipv4first");
 
-// Ver qué IPs devuelve Gmail
+// Ver que IPs devuelve Gmail
 dns.lookup("smtp.gmail.com", { all: true }, (err, addresses) => {
   console.log("SMTP:", addresses);
 });
