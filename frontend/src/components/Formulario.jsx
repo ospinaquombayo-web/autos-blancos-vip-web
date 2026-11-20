@@ -27,7 +27,7 @@ function Formulario() {
 
         try {
       const response = await fetch(
-        "https://onrender.com",
+        "https://autos-blancos-vip-web.onrender.com/cotizacion",
         {
           method: "POST",
           headers: {
