@@ -26,16 +26,29 @@ app.use(
 
 app.use(express.json());
 
-// 🔌 CONFIGURACIÓN DE LA BASE DE DATOS EN LA NUBE (AIVEN)
-const db = mysql.createConnection({
+// 🔌 CONFIGURACIÓN DE POOL DE CONEXIONES EN LA NUBE (AIVEN) - NO SE CAE POR INACTIVIDAD
+const db = mysql.createPool({
   host: "mysql-2cadf4fa-autosblancosvip.h.aivencloud.com",
   port: 18890,
   user: "avnadmin",
-  password: process.env.AIVEN_PASSWORD, // 
+  password: process.env.AIVEN_PASSWORD,
   database: "defaultdb",
   ssl: {
     rejectUnauthorized: false,
   },
+  waitForConnections: true,
+  connectionLimit: 10,
+  queueLimit: 0,
+});
+
+// Verificación inicial del Pool
+db.getConnection((err, connection) => {
+  if (err) {
+    console.log("❌ Error de conexión a la nube:", err);
+  } else {
+    console.log("🚀 MySQL en la nube (Aiven) conectado correctamente");
+    connection.release();
+  }
 });
 
 const transporter = nodemailer.createTransport({
