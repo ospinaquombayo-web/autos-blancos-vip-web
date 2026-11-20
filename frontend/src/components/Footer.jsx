@@ -1,8 +1,8 @@
 // 🛠️ Añadimos FaTiktok para cambiarlo por Twitter
 import { FaEnvelope, FaWhatsapp, FaFacebook, FaTiktok, FaInstagram } from "react-icons/fa";
-import logoMinTic from "../assets/mintic.png";
-import logoSic from "../assets/sic.png";
-import logoSuperTransporte from "../assets/supertransporte.png";
+import logoMinTic from "../assets/mintic.PNG";
+import logoSic from "../assets/sic.PNG";
+import logoSuperTransporte from "../assets/supertransporte.PNG";
 
 function Footer() {
   return (
